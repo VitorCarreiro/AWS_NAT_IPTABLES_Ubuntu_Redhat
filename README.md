@@ -6,6 +6,8 @@
 
 ![image](https://user-images.githubusercontent.com/98783977/153974740-39e00921-98f1-4361-b6f7-6b586cf171c4.png)
 
+**Now go to the terminal and start doing those commands**
+
 **You need to enable IP forwarding if you want to be capable of forwarding packets to other destinations, go to `nano /etc/sysctl.d/99-sysctl.conf`**
 
 `Uncomment "net.ipv4.ip_forward=1"`
