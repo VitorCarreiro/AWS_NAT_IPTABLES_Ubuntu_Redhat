@@ -25,9 +25,9 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 systemctl restart iptables
 netfilter-persistent save
 ```
-# For the ubuntu client
+# For the ubuntu client 🔹
 
-**Go to `nano /etc/netplan/50-cloud-init.yaml`, if you have DNS installed place the nameservers section if you don't have it don't place it**
+**Go to `nano /etc/netplan/50-cloud-init.yaml` and add the gateway of your server, if you have DNS installed place the nameservers section if you don't have it don't place it**
 ```
             dhcp4-overrides:
                 use-routes: false
@@ -70,4 +70,12 @@ service iptables save
 ```
 sysctl -w net.ipv4.ip_forward=1
 sysctl -p
+```
+# For the redhat client 🔺
+
+**Go to `nano /etc/sysconfig/network-scripts/ifcfg-eth0` and add the gateway of your server, if you have DNS installed place the DNS section if you don't have it don't place it**
+```
+GATEWAY=172.31.0.X
+DNS1=172.31.0.X
+DNS2=8.8.8.8
 ```
